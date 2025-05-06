@@ -1,0 +1,376 @@
+@font-face {
+  font-family: "captionFont";
+  src: url(Assets/Fonts/TertiaryWriting-dXe7.ttf) format("truetype");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url(Assets/bulletin-board-325721_1280.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* FLEX CONTAINER */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* IMAGE WRAPPER */
+.about-image {
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+/* STICKY NOTE HEADING BLOCK */
+.intro-note {
+  background-color: #fffec8;
+  padding: 36px 48px;
+  border-radius: 10px;
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.25);
+  transform: rotate(-2deg);
+  margin: 40px auto 60px;
+  text-align: center;
+  font-family: "captionFont", "Poppins", sans-serif;
+  color: #333;
+  font-size: 24px;
+  max-width: 80%;
+  position: relative;
+}
+
+.intro-note h1 {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.intro-note p {
+  font-size: 18px;
+}
+
+/*STICKY NOTE HEADING BLOCK ON SUB MENU PAGES*/
+.sub-note {
+  background-color: #fffec8;
+  padding: 36px 48px;
+  border-radius: 10px;
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.25);
+  margin: 40px auto 60px;
+  text-align: center;
+  font-family: "captionFont", "Poppins", sans-serif;
+  color: #333;
+  font-size: 24px;
+  max-width: 50%;
+  position: relative;
+}
+
+.sub-note h1 {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+/* POLAROID GALLERY */
+.polaroid-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 40px;
+}
+
+.polaroid {
+  width: 250px;
+  background: white;
+  padding: 10px 10px 25px 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.polaroid:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  font-size: 26px;
+  color: #333;
+  margin-top: 8px;
+  font-family: "captionFont", "Poppins", sans-serif;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+/* STICKY NAVIGATION BUTTON */
+.sticky-note {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 120px;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+.sticky-note img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sticky-note:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* NOTEBOOK PAPER BLOCK */
+.notebook-paper {
+  background: linear-gradient(#fff, #fff),
+    repeating-linear-gradient(#cfd8dc 0px, #cfd8dc 1px, transparent 24px);
+  background-size: 100% 100%, 100% 100%;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 700px;
+  font-family: "Gloria Hallelujah", cursive;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: rotate(-2deg);
+  flex: 2 1 500px;
+  min-width: 280px;
+}
+
+.notebook-paper::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #f44336;
+  opacity: 0.5;
+}
+
+.notebook-paper::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url("pin.png") no-repeat center center / contain;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* TEXT IN NOTEBOOK */
+.handwritten-text {
+  font-family: "Gloria Hallelujah", cursive;
+  line-height: 1.8;
+  white-space: pre-line;
+  color: navy;
+}
+
+/* RESUME ICON */
+.resume-icon {
+  position: absolute;
+  top: 12px;
+  right: 20%;
+  transform: translateX(50%) rotate(5deg);
+  z-index: 5;
+}
+
+.resume-icon img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.resume-icon:hover img {
+  transform: scale(1.1) rotate(5deg);
+  cursor: pointer;
+  filter: drop-shadow(0 0 12px #ba5312) brightness(2);
+}
+
+/* EMAIL ICON */
+.email-icon {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  transform: translateX(50%) rotate(-5deg);
+  z-index: 5;
+}
+
+.email-icon img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.email-icon:hover img {
+  transform: scale(1.1) rotate(5deg);
+  cursor: pointer;
+  filter: drop-shadow(0 0 12px #ba5312) brightness(2);
+}
+
+.email-link {
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: #ba5312;
+  cursor: pointer;
+}
+
+/*FOOTER*/
+.site-footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+.footer-nav {
+  margin-bottom: 10px;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #ffcc70;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .notebook-paper {
+    transform: none;
+    clip-path: none;
+    border-radius: 12px;
+  }
+
+  .polaroid {
+    width: 200px;
+    transform: rotate(0deg);
+  }
+
+  .intro-note {
+    padding: 20px 24px;
+    font-size: 20px;
+    margin: 30px auto 40px;
+    transform: rotate(-2deg);
+  }
+
+  .intro-note h1 {
+    font-size: 22px;
+  }
+
+  .intro-note p {
+    font-size: 16px;
+  }
+
+  .resume-button {
+    font-size: 14px;
+    padding: 8px 14px;
+    margin-top: 12px;
+  }
+
+  .container {
+    padding-top: 20px;
+  }
+
+  .sticky-note-link {
+    top: 10px;
+    left: 10px;
+    width: 90px;
+  }
+
+  .resume-icon {
+    top: 10px;
+    right: 10%;
+    transform: translateX(50%) rotate(5deg);
+  }
+
+  .resume-icon img {
+    width: 30px;
+  }
+
+  .email-icon {
+    top: 15px;
+    left: 5%;
+    transform: translateX(50%) rotate(-5deg);
+  }
+
+  .email-icon img {
+    width: 30px;
+  }
+
+  .sub-note {
+    padding: 20px 24px;
+    font-size: 20px;
+    margin: 30px auto 40px;
+    transform: rotate(-2deg);
+  }
+
+  .sub-note h1 {
+    font-size: 22px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-nav a {
+    display: block;
+    margin: 5px 0;
+  }
+}
