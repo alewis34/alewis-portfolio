@@ -383,6 +383,7 @@ body {
   .handwritten-text {
   white-space: normal;
   word-break: break-word;
+  margin-bottom: 1.5em;
 }
 
 }
