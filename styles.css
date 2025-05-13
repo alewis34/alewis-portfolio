@@ -373,4 +373,15 @@ body {
     display: block;
     margin: 5px 0;
   }
+
+  .notebook-paper::before,
+  .notebook-paper::after {
+  display: none;
+}
+
+  .handwritten-text {
+  white-space: normal;
+  word-break: break-word;
+}
+
 }
